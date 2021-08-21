@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<title>Nos filiations</title>
+ 
+ 
+ 
+ 
+
+</head>
+<body onload="alert('Veuillez renseigner normalement tous les champs pour que vos réponses soient prises en compte! Merci de votre compréhension, Cliquez sur OK');">
+											  
+						<div id="bloc_page">
+ 	
+ 
+<div>
+ <section> 
+ 	
+    
+<h3 class="text-center"><b> Contactez-Nous</b></h3>
+<form action="mailto:juniorsamb3@gmail.com" method="post">
+<table align="center" summary="Fiche de contact" width="900px" height="500px";>
+<tr>
+<td><label for="prenom"> Prénom *</label>     
+<input type="text" name="prenom" size="30"  maxlength="25" id="prenom" class="form-control" required="required"/><span id="Prenom_Manquant"></span> </td>
+</tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>
+<td><label for="nom"> Nom *</label>       
+
+<input type="text" name="nom" size="30"  maxlength="20" id="nom" class="form-control" required="required"/>
+<span id="Nom_Manquant"></span></td>
+</tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+
+<tr>
+<td><label for="obj"> Objet *</label> 
+  <input type="text" name="Objet_Message" size="45" required="required" class="form-control" id="obj"/> <span id="Objet_Manquant"></span></td>
+</tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+
+<tr>
+<td><label for="mess">Adresse mail *</label>  
+<input type="email" name="adresse_mail" size="45" placeholder="Donner un mail Valide Svp" id ="mess" class="form-control" required="required"/>
+<span id="Add_Manquant"></span></td>
+</tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+<fieldset>
+    <legend>
+<tr><td>Votre Message *<br> </td></tr>
+<tr><td>
+
+<textarea name="zonedetexte" rows="20" cols="100" id="messager" class="form-control" required="required"></textarea>
+<span id="Message_requis"></span>
+</td></tr>
+</legend>
+<tr>  </tr>
+<tr>  </tr>
+<tr>  </tr>
+
+<tr><td>&nbsp <input type="submit" value="Envoyer" name="Envoyer" class="btn btn-success btn-lg" id="Submit_envoi">
+	&nbsp&nbsp&nbsp
+	<input type="reset" value="Annuler" class="btn btn-danger btn-lg" id="desiste"/></td></tr>
+
+</fieldset>
+</table>
+
+</form>
+</p> 
+
+ 
+ 	</section>
+</div>
+ 	<div>
+ 	
+	</div>
+ </div> 
+		
+                     
+
+</body>
+</html>
+
+<script type="text/javascript">
+		
+			var prenom = document.getElementById("prenom");
+			var prenom_requis = document.getElementById("Prenom_Manquant");
+			prenom.addEventListener("blur", function(){
+				if(prenom.value==="" || !isNaN(prenom.value)){
+					 prenom_requis.innerHTML="Champ requis";
+					 prenom_requis.style.color="blue";
+				}
+				else{
+					 prenom_requis.innerHTML="";
+				}
+			});
+			var nom = document.getElementById("nom");
+			var nom_requis = document.getElementById("Nom_Manquant");
+			nom.addEventListener("blur", function(){
+				if(nom.value ===" " || !isNaN(nom.value)){
+					nom_requis.innerHTML = "Champ requis";
+					nom_requis.style.color = "fuchsia";
+				}
+				else{
+					nom_requis.innerHTML=" ";
+				}
+			});
+			var mail = document.getElementById("mess");
+				var regex = /.+@.+\..+/;
+				mail.addEventListener("blur",function(e){
+				var valide="";
+				
+				 if(!regex.test(e.target.value)){
+				 valide = "Entrez une adresse valide,vous aussi serieux SVP";
+				 
+				 }
+				 var novalide = document.getElementById("Add_Manquant");
+				 novalide.innerText = valide;
+
+				});
+			
+			var objet = document.getElementById("obj");
+			var Obj_requis = document.getElementById("Objet_Manquant");
+			objet.addEventListener("blur", function(){
+				if(objet.value === " " || !isNaN(objet.value)){
+					Obj_requis.innerHTML = "Champ requis";
+					Obj_requis.style.color = "green";
+					}
+				else{
+					Obj_requis.innerHTML=" ";
+					}
+			});
+			
+			
+			
+			var message = document.getElementById("messager");
+			var Mess_requis = document.getElementById("Message_requis")
+			message.addEventListener("blur", function(){
+				if(message.value ==="" ){
+					Mess_requis.innerHTML ="Champ requis";
+					Mess_requis.style.color ="yellow";
+					}
+				else{
+					Mess_requis.innerHTML="";
+					}
+			});
+   
+var validation = document.getElementById("Submit_envoi");
+	validation.addEventListener("click",function(){
+	if(objet.value =="" || nom.value =="" || prenom.value =="" ||  mail.value =="" ||
+		message.value =="" )
+		{
+		alert("Veuillez Verifier et Corriger toute Erreur de Validation Svp!!")
+		}
+	else {
+		var rep =  window.open("","MsgWindow");
+		rep.document.write(
+"<br> Prenom : "+prenom.value+"<br> Nom : "+nom.value+"<br> Objet: "+objet.value+"<br> Email: "+mail.value+"<br> Message : "+message.value);}
+		});
+		
+				
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
